@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "f85483ca-73b9-40e6-8bb4-5f556165622e",
+		"name": "Bank Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"\",\n    \"password\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accountRegister",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accountRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZWVjNGYzOTA2ODFiMGZmYzU1M2I4ZCIsImlhdCI6MTYwOTQ4MzU1MCwiZXhwIjoxNjA5NTY5OTUwfQ.rm4o1vYHEvex8jZFRKjsbavZeUqORraAPqWG_Op7jlQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 100000,\n    \"accountNumber\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statement Using Account Number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZWVjNGYzOTA2ODFiMGZmYzU1M2I4ZCIsImlhdCI6MTYwOTQ4MzU1MCwiZXhwIjoxNjA5NTY5OTUwfQ.rm4o1vYHEvex8jZFRKjsbavZeUqORraAPqWG_Op7jlQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/statement?accountNumber=09933456761212",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"statement"
+					],
+					"query": [
+						{
+							"key": "accountNumber",
+							"value": "09933456761212"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZWVjNGYzOTA2ODFiMGZmYzU1M2I4ZCIsImlhdCI6MTYwOTQ4MzU1MCwiZXhwIjoxNjA5NTY5OTUwfQ.rm4o1vYHEvex8jZFRKjsbavZeUqORraAPqWG_Op7jlQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\":200000,\n    \"accountNumber\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statement Using Date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZWVhNjFjMmJmNDA5Y2FlZWMzM2I1MyIsImlhdCI6MTYwOTQ3NTcyOCwiZXhwIjoxNjA5NTYyMTI4fQ.toYY5JbTByuVYvvvzaueuSnzuzTdm_Fqlrbw1-lqrdU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/statement?from=2021/01/01&to=2021/01/01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"statement"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2021/01/01"
+						},
+						{
+							"key": "to",
+							"value": "2021/01/01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statement Using Account and Date Filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZWVhNjFjMmJmNDA5Y2FlZWMzM2I1MyIsImlhdCI6MTYwOTQ3NTcyOCwiZXhwIjoxNjA5NTYyMTI4fQ.toYY5JbTByuVYvvvzaueuSnzuzTdm_Fqlrbw1-lqrdU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/statement?accountNumber=1530771160&from=2021/01/01&to=2021/01/01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"statement"
+					],
+					"query": [
+						{
+							"key": "accountNumber",
+							"value": "1530771160"
+						},
+						{
+							"key": "from",
+							"value": "2021/01/01"
+						},
+						{
+							"key": "to",
+							"value": "2021/01/01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enquiry",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZWVhNjFjMmJmNDA5Y2FlZWMzM2I1MyIsImlhdCI6MTYwOTQ3NTcyOCwiZXhwIjoxNjA5NTYyMTI4fQ.toYY5JbTByuVYvvvzaueuSnzuzTdm_Fqlrbw1-lqrdU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/enquiry/{accountNumber}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"enquiry",
+						"{accountNumber}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
